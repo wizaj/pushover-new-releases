@@ -90,7 +90,9 @@ app.post('/webhook/newreleases', async (req, res) => {
       ? stripHtml(note.message).substring(0, 500)
       : 'New release available';
 
-    const title = `🚀 ${project} ${version}`;
+    // Use short project name (last path segment) — owner/repo → repo
+    const shortName = String(project || '').split('/').filter(Boolean).pop() || project;
+    const title = `🚀 ${shortName} ${version}`;
     const url = `https://github.com/${project}/releases/tag/${version}`;
     const priority = is_prerelease ? -1 : 0;
 
