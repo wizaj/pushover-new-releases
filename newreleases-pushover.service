@@ -1,0 +1,23 @@
+[Unit]
+Description=NewReleases to Pushover webhook forwarder
+After=network.target
+
+[Service]
+Type=simple
+# Adjust these paths + user for your deployment
+WorkingDirectory=/opt/pushover-new-releases
+ExecStart=/usr/bin/node server.js
+EnvironmentFile=/opt/pushover-new-releases/.env
+Restart=on-failure
+RestartSec=5
+User=pushover
+Group=pushover
+# Hardening
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/pushover-new-releases
+
+[Install]
+WantedBy=multi-user.target

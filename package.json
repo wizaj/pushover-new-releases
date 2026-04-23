@@ -1,0 +1,35 @@
+{
+  "name": "pushover-new-releases",
+  "version": "1.0.0",
+  "description": "Forward NewReleases.io webhooks to Pushover as mobile push notifications. HMAC-SHA256 signature verification built in.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "newreleases",
+    "pushover",
+    "webhook",
+    "notifications",
+    "github-releases"
+  ],
+  "author": "Wiza Jalakasi",
+  "license": "MIT",
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wizaj/pushover-new-releases.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wizaj/pushover-new-releases/issues"
+  },
+  "homepage": "https://github.com/wizaj/pushover-new-releases#readme",
+  "dependencies": {
+    "axios": "^1.13.2",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
